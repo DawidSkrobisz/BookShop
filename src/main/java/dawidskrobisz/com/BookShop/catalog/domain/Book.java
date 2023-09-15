@@ -1,4 +1,4 @@
-package dawidskrobisz.com.BookShop;
+package dawidskrobisz.com.BookShop.catalog.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
