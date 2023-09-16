@@ -2,12 +2,12 @@ package dawidskrobisz.com.BookShop.catalog.application;
 
 import dawidskrobisz.com.BookShop.catalog.domain.Book;
 import dawidskrobisz.com.BookShop.catalog.domain.CatalogService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CatalogController {
     private final CatalogService service;
 

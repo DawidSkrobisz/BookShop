@@ -1,27 +1,15 @@
 package dawidskrobisz.com.BookShop.catalog.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Book {
     Long id;
     String title;
     String author;
     Integer year;
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", year=" + year +
-                '}';
-    }
 }
