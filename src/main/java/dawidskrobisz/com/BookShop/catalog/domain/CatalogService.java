@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class CatalogService {
     private final CatalogRepository repository;
 
-    public CatalogService(@Qualifier("bestsellerCatalogRepository") CatalogRepository repository) {
+    public CatalogService(@Qualifier("schoolCatalogRepository") CatalogRepository repository) {
         this.repository = repository;
     }
 
@@ -18,6 +18,13 @@ public class CatalogService {
         return repository.listAll()
                 .stream()
                 .filter(book -> book.getTitle().startsWith(title))
+                .collect(Collectors.toList());
+    }
+
+    public List<Book> findByAuthor(String author) {
+        return repository.listAll()
+                .stream()
+                .filter(book -> book.getAuthor().startsWith(author))
                 .collect(Collectors.toList());
     }
 }

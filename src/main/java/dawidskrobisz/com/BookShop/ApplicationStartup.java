@@ -12,11 +12,19 @@ import java.util.List;
 public class ApplicationStartup implements CommandLineRunner {
 
     private final CatalogController catalogController;
+    private final String title;
+    private final String author;
 
     @Override
     public void run(String... args) {
-        List<Book> books = catalogController.findByTitle("Hobbit");
-        books.forEach(System.out::println);
+        List<Book> books = catalogController.findByTitle(title);
+        List<Book> authors = catalogController.findByAuthor(author);
 
+        System.out.println("Książki o tytule zawierającym '" + title + "':");
+        books.forEach(book -> System.out.println("Tytuł: " + book.getTitle() + ", Autor: " + book.getAuthor()));
+
+        System.out.println("\nKsiążki autorstwa '" + author + "':");
+        authors.forEach(book -> System.out.println("Tytuł: " + book.getTitle() + ", Autor: " + book.getAuthor()));
     }
+
 }
